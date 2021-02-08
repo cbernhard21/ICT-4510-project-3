@@ -17,3 +17,5 @@ L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   tileSize: 512,
   zoomOffset: -1
 }).addTo(mymap);
+
+const marker = L.marker([39.678121, -104.961753]).addTo(mymap);
