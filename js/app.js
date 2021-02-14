@@ -8,17 +8,13 @@ If the user does not want to enable the location, a map of University of Denver 
 
 'use strict'
 
+//GLOBAL VARIABLES
 const accessToken = 'pk.eyJ1IjoiY2Jlcm5oYXJkIiwiYSI6ImNra3JjMGQ4NDAxMTUybnF0NmRjYmgybGcifQ.EO4xXGkO9HznNQ_sg41tmA';
 const geoButton = document.querySelector('#geo-button');
 const mymap = new L.Map('mapid');
 const mapid = document.querySelector('#mapid');
 
-function setUniversityOfDenverMap() {
-  const coords = [39.678121, -104.961753];
-  const popUpMessage = '<p class="message"><b>University Of Denver</b><br/>Main Campus</p>';
-  makeMap(coords, popUpMessage);
-}
-
+//FUNCTIONS
 function makeMap(coords, popUpMessage) {
   mapid.classList.remove('hidden');
   mymap.setView(coords, 15);
@@ -38,20 +34,11 @@ function makeMap(coords, popUpMessage) {
 
 function getUserLocation() {
 
-  if (!navigator.geolocation) {
-    console.log(`Your browser doesn't support Geolocation`);
-    return;
-  }
-
   navigator.geolocation.getCurrentPosition(success, error);
 
   function success(position) {
-
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const coords = [latitude, longitude];
+    const coords = [position.coords.latitude, position.coords.longitude];
     const popUpMessage = '<p class="message">You are here!</p>';
-
     makeMap(coords, popUpMessage);
   }
 
@@ -68,4 +55,11 @@ function getUserLocation() {
   }
 }
 
+function setUniversityOfDenverMap() {
+  const coords = [39.678121, -104.961753];
+  const popUpMessage = '<p class="message"><b>University Of Denver</b><br/>Main Campus</p>';
+  makeMap(coords, popUpMessage);
+}
+
+//EVENT LISTENERS
 geoButton.addEventListener('click', getUserLocation);
