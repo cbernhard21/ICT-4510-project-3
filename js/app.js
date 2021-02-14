@@ -2,8 +2,8 @@
 Christopher Bernhard
 ICT 4510
 Project 3: Build A Map with API
-The button finds the user's location and displays it on a map.
-If the user does not want to enable the location, a map of University of Denver is displayed
+Using the geolocation API, the user can see their location on a map.
+If the user does not want to enable the geolocation on their browser, a map of University of Denver is displayed
 */
 
 'use strict'
