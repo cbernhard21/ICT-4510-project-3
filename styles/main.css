@@ -12,3 +12,11 @@
 #mapid {
   height: 600px;
 }
+
+.message {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
