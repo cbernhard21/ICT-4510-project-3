@@ -22,6 +22,8 @@ main {
 
 #mapid {
   height: 600px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 1px rgba(87, 87, 87, 0.2);
 }
 
 button {
@@ -29,13 +31,14 @@ button {
   background-color: #fff;
   border: 2px solid #2e2e2e;
   font-size: 3rem;
+  margin-bottom: 1rem;
   padding: 1.5rem 7rem;
   transition: all 0.3s ease-out;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #2e2e2e;
+  background-color: rgb(46, 46, 46);
   color: #fff;
 }
 
