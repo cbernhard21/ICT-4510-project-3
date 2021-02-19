@@ -30,13 +30,11 @@ function makeMap(coords, popUpMessage) {
   }).addTo(mymap);
 
   const marker = L.marker(coords).addTo(mymap);
-
   marker.bindPopup(popUpMessage).openPopup();
 }
 
 function getUserLocation() {
 
-  // navigator.geolocation.getCurrentPosition(success, error);
   if (!navigator.geolocation) {
     console.log('not supported');
     setUniversityOfDenverMap();
@@ -57,8 +55,6 @@ function getUserLocation() {
     console.log('Unable to find your location');
     setUniversityOfDenverMap();
   }
-
-
 }
 
 function setUniversityOfDenverMap() {
